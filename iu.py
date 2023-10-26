@@ -5,7 +5,7 @@ from enfermedad import diagnosticar
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app,resources={r"/predict-image": {"origins": ["http://localhost:3000", "https://succes-4a1e9.firebaseapp.com"])
 
 @app.route('/procesar-orden', methods=['POST'])
 def procesar_orden():
